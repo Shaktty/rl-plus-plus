@@ -47,3 +47,8 @@ log/*.log
 
 # Armory
 data/armory.tin
+
+#PJS --- buffer temporles
+kerovan.tin
+notza.tin
+

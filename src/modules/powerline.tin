@@ -77,11 +77,13 @@
     #FORMAT {heartbeatStringLength} {%L} {$heartbeatString};
     #FORMAT {imagesLength} {%L} {$images};
     #FORMAT {stoneLayersLength} {%L} {$stoneLayers};
+    #FORMAT {forma} {$forma};
+    #FORMAT {formaLengthl} {%L} {$forma};
     #FORMAT {screenWidth} {%C};
 
-    #MATH {fillerLength} {$screenWidth - $healthLength - $energyLength - $heartbeatStringLength - $imagesLength - $stoneLayersLength};
+    #MATH {fillerLength} {$screenWidth - $healthLength - $energyLength - $heartbeatStringLength - $imagesLength - $stoneLayersLength-$formaLength};
     #FORMAT {filler} {<G03>%+${fillerLength}s<099>} {};
-    #FORMAT {result} {%s%s%s%s%s%s} {$health} {$energy} {$heartbeatString} {$filler} {$images} {$stoneLayers};
+    #FORMAT {result} {%s%s%s%s%s%s} {$health} {$energy} {$heartbeatString} {$filler} {$images} {$stoneLayers} {$forma};
 };
 
 /**********************************************************************************************************************
@@ -179,6 +181,8 @@
 /**********************************************************************************************************************
  * Events                                                                                                             *
  **********************************************************************************************************************/
+
+#va forma {semi-drow};
 
 #ALIAS {/event_RL_POWERLINE_heartbeat} {
     #VAR {stats[heartbeat]} {4};
