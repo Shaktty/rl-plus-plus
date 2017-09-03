@@ -9,16 +9,25 @@
 
 /register_module {RL_THIEF} {Clases: Ladrones} {Utilidades para cazadores.};
 
+#ALIAS {ax} { /x; cnick xp x } {5};
 /**********************************************************************************************************************
  * Actions                                                                                                            *
  **********************************************************************************************************************/
+#ALIAS {ar} {arrojar pincho a x} {5};
+#ACTION {Vislumbras una} {jj} {5};
 
 /**********************************************************************************************************************
  * Highlights                                                                                                         *
  **********************************************************************************************************************/
 
-#HIGHLIGHT {^Dejas de divisar el horizonte.$} {magenta bold};
-#HIGHLIGHT {^Abandonas tu estado de concentraci{ó|o}n ba{ñ|ny}ad{a|o} en un sudor fr{í|i}o, descubriendo heridas de las que no te hab{í|i}as percatado.$} {magenta bold};
+#HIGHLIGHT        {Copias el nick xp al nick x quedando}                  {magenta}  {5}
+#HIGHLIGHT        {Entierras cuerpo de %1 bajo tierra}                {<cfa>}  {5}
+#HIGHLIGHT        {Nombre corto %1 cambiado de }          {orange}  {5}
+#HIGHLIGHT        {Te encaras contra %1 en posicón de combate.}                          {bold,red}  {5}
+#HIGHLIGHT        {¡Lanzas un ataque de oportunidad contra %1!}                          {bold,magenta}  {5}
+#HIGHLIGHT        {¡Logras pillar desprevenido a %1!}                {bold,magenta}  {5}
+#HIGHLIGHT        {¡Obtienes una maestría en %1 gracias a la experiencia adquirida en tu puñalada!}                                                                {bold,cyan}  {5}
+#HIGHLIGHT        {Izquierdo}  {red bold}  {10}
 
 /**********************************************************************************************************************
  * Testing                                                                                                            *
