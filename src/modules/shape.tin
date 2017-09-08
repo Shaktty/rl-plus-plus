@@ -8,8 +8,8 @@
  **********************************************************************************************************************/
 
 /register_module {RL_SHAPE} {Estado de vida} {Muestra una representación gráfica de los estados de vida de NPCs y jugadores.};
-/add_module_setting {RL_SHAPE} {fill} {enum} {solid;star} {solid} {Rellena las barras de estados con bloques (solid) o con asteriscos (star)};
-/add_module_setting {RL_SHAPE} {length} {number} {} {50} {Longitud de las barras de estado};
+/add_module_setting {RL_SHAPE} {fill} {enum} {solid;star} {star} {Rellena las barras de estados con bloques (solid) o con asteriscos (star)};
+/add_module_setting {RL_SHAPE} {length} {number} {} {10} {Longitud de las barras de estado};
 
 /**********************************************************************************************************************
  * Variables                                                                                                          *

@@ -1,0 +1,44 @@
+#CLASS {RL_DRUID} {kill};
+#CLASS {RL_DRUID} {open};
+
+/**********************************************************************************************************************
+ * Module RL_DRUID                                                                                                   *
+ *                                                                                                                    *
+ * Common functionalities for all druidic classes.                                                                     *
+ **********************************************************************************************************************/
+
+/register_module {RL_DRUID} {Clases: Druida} {Utilidades comunes para druidas.};
+
+/**********************************************************************************************************************
+ * Highlights                                                                                                         *
+ **********************************************************************************************************************/
+
+/*
+ * Warning
+ */
+#HIGHLIGHT {^El hechizo de 'retener' que afectaba a %* se desmorona cuando este recibe mucho da{ñ|ny}o.$} {bold magenta} {5};
+#HIGHLIGHT {^%* queda liberado de la fuerza que le reten{í|i}a..$} {bold magenta} {5};
+
+/*
+ * Danger
+ */
+#HIGHLIGHT {^Sientes como una fuerza divina te rodea,%*} {bold red} {5};
+
+/*
+ * Goodies
+ */
+#HIGHLIGHT {^Puedes moverte libremente de nuevo.$} {bold green} {5};
+#HIGHLIGHT {^Paralizas a %* mediante una fuerza divina que le rodea.$} {5};
+
+
+/**********************************************************************************************************************
+ * Testing                                                                                                            *
+ **********************************************************************************************************************/
+
+#IF {$_development == 1} {
+    #ALIAS {/test_RL_PRIEST} {
+        #SHOWME {No tests implemented.};
+    };
+};
+
+#CLASS {RL_PRIEST} {close};
