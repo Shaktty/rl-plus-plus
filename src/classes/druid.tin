@@ -18,7 +18,7 @@
  */
 #HIGHLIGHT {^El hechizo de 'retener' que afectaba a %* se desmorona cuando este recibe mucho da{ñ|ny}o.$} {bold magenta} {5};
 #HIGHLIGHT {^%* queda liberado de la fuerza que le reten{í|i}a..$} {bold magenta} {5};
-
+#HIGHLIGHT {Notas tus dientes doloridos tras la última dentellada. Deberás esperar.} {bold,orange}  {5};
 /*
  * Danger
  */
@@ -29,6 +29,12 @@
  */
 #HIGHLIGHT {^Puedes moverte libremente de nuevo.$} {bold green} {5};
 #HIGHLIGHT {^Paralizas a %* mediante una fuerza divina que le rodea.$} {5};
+#HIGHLIGHT {Oso}  {<fca>}  {5};
+#HIGHLIGHT {Pantera}  {bold,black}  {5};
+#HIGHLIGHT {Rana}  {bold,green}  {5};
+#HIGHLIGHT {Hiena}  {orange}  {5};
+#HIGHLIGHT {Jabali}  {green}  {5};
+#HIGHLIGHT {Mono}  {<caf>}  {5};
 
 
 /**********************************************************************************************************************
