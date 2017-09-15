@@ -42,9 +42,9 @@
  **********************************************************************************************************************/
 
 #IF {$_development == 1} {
-    #ALIAS {/test_RL_PRIEST} {
+    #ALIAS {/test_RL_DRUID} {
         #SHOWME {No tests implemented.};
     };
 };
 
-#CLASS {RL_PRIEST} {close};
+#CLASS {RL_DRUID} {close};

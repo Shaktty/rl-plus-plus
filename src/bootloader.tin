@@ -25,6 +25,7 @@
 #READ {src/modules/target.tin};
 #READ {src/modules/combat.tin};
 
+#READ {src/classes/druid.tin};
 #READ {src/classes/thief.tin};
 #READ {src/classes/caster.tin};
 #READ {src/classes/hunter.tin};
