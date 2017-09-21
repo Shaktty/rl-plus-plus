@@ -1,22 +1,22 @@
-#CLASS {RL_PATHWALKER} {kill};
-#CLASS {RL_PATHWALKER} {open};
+#CLASS {RL_SWALKER} {kill};
+#CLASS {RL_SWALKER} {open};
 
 
 /**********************************************************************************************************************
- * Module RL_PATHWALKER                                                                                               *
+ * Module RL_SWALKER                                                                                               *
  *                                                                                                                    *
  * Runs -hidden-  automatically through straight paths                                                                          *
  **********************************************************************************************************************/
 
-/register_module {RL_PATHWALKER} {Rumbo} {Recorrido automático de caminos (como el comando galopar).};
-/add_module_setting {RL_PATHWALKER} {delay} {number} {} {1} {Segundos entre dirección y dirección};
+/register_module {RL_SWALKER} {srumbo} {Recorrido automático de caminos (como el comando galopar).};
+/add_module_setting {RL_SWALKER} {delay} {number} {} {1} {Segundos entre dirección y dirección};
 
 /**********************************************************************************************************************
  * Aliases                                                                                                            *
  **********************************************************************************************************************/
 
 /*
- * Alias /srumbo {direction|off}
+ * Alias /ssrumbo {direction|off}
  *
  * Walks a straight path towards the given direction, cloaked
  *
@@ -24,24 +24,24 @@
  *   %1 (any) direction|off
  *
  * Example:
- *   /srumbo {e};
+ *   /ssrumbo {e};
  */
-#ALIAS {/srumbo} {
-    #CLASS {RL_PATHWALKER_IMPL} {open};
+#ALIAS {/ssrumbo} {
+    #CLASS {RL_SWALKER_IMPL} {open};
     #IF {"%1" == ""} {
-        /message {Sintáxis: /srumbo <dirección|off>};
+        /message {Sintáxis: /ssrumbo <dirección|off>};
         #RETURN;
     };
-    #ALIAS {/limpiar_rumbo} {
-        #CLASS {RL_PATHWALKER_IMPL} {kill};
+    #ALIAS {/limpiar_srumbo} {
+        #CLASS {RL_SWALKER_IMPL} {kill};
         /message {%%1};
         #UNVAR {lastVisitedExit};
         #UNVAR {exits};
         #UNDELAY {pathwalker_movement};
-        #UNALIAS {/limpiar_rumbo};
+        #UNALIAS {/limpiar_srumbo};
     };
     #IF {"%1" == "off"} {
-        /limpiar_rumbo {Rumbo detenido.};
+        /limpiar_srumbo {srumbo detenido.};
         #RETURN;
     };
     #VAR {lastVisitedExit} {@opposite_direction{%1}};
@@ -51,43 +51,43 @@
         #LIST {exits} {create} {$exits};
         #LIST {exits} {size} {exitsLength};
         #IF {$exitsLength > 2} {
-            /limpiar_rumbo {Has llegado a una bifurcación en el camino.};
+            /limpiar_srumbo {Has llegado a una bifurcación en el camino.};
         };
         #ELSEIF {$exitsLength < 2} {
-            /limpiar_rumbo {Has llegado a un callejón sin salida.};
+            /limpiar_srumbo {Has llegado a un callejón sin salida.};
         };
         #ELSE {
             #FOREACH {$exits[%%*]} {exit} {
                 #IF {"$exit" != "$lastVisitedExit"} {
                     #VAR {lastVisitedExit} {@opposite_direction{$exit}};
-                    #DELAY {pathwalker_movement} {$exit} {@get_module_setting_value{RL_PATHWALKER;delay}};
+                    #DELAY {pathwalker_movement} {$exit} {@get_module_setting_value{RL_SWALKER;delay}};
                     #BREAK;
                 };
             };
         };
     };
     #ACT {^Parece que %* no produjo efecto alguno.$} {
-        /limpiar_rumbo {Deteniendo el rumbo, pues algo raro ha sucedido.};
+        /limpiar_srumbo {Deteniendo el srumbo, pues algo raro ha sucedido.};
     };
-    /message {Caminando rumbo %1...};
+    /message {Sigilando srumbo %1...};
     #SEND {%1};
-    #CLASS {RL_PATHWALKER_IMPL} {close};
+    #CLASS {RL_SWALKER_IMPL} {close};
 }
 
 /**********************************************************************************************************************
  * Autocompletion                                                                                                     *
  **********************************************************************************************************************/
 
-#TAB {/rumbo};
+#TAB {/srumbo};
 
 /**********************************************************************************************************************
  * Testing                                                                                                            *
  **********************************************************************************************************************/
 
 #IF {$_development == 1} {
-    #ALIAS {/test_RL_PATHWALKER} {
+    #ALIAS {/test_RL_SWALKER} {
         #SHOWME {No tests implemented.};
     };
 };
 
-#CLASS {RL_PATHWALKER} {close};
+#CLASS {RL_SWALKER} {close};

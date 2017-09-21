@@ -26,6 +26,7 @@
     #SHOWME {<fac>/log <on|off> <acd>Activa o desactiva el logeado. Los logs se guardan en el directorio /logs.<099>};
     #SHOWME {<fac>/reload <acd>Recarga el script. Sólo funciona en modo desarrollo.<099>};
     #SHOWME {<fac>/rumbo <dirección> <acd>Camina automáticamente en una dirección, de forma similar al comando "galopar".<099>};
+    #SHOWME {<fac>/srumbo <dirección> <CAF>Sigilas<acd> automáticamente en una dirección, de forma similar al comando "galopar".<099>};
     #SHOWME {<fac>/configure Configura aspectos como la barra de estado, y demas 099>};
     #SHOWME {<fac>/x <acd>Computa una lista de enemigos.<099>};
     #SHOWME {};

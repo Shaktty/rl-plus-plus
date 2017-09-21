@@ -18,6 +18,7 @@
 #READ {src/modules/inventory.tin};
 #READ {src/modules/logger.tin};
 #READ {src/modules/pathwalker.tin};
+#READ {src/modules/swalker.tin};
 #READ {src/modules/player.tin};
 #READ {src/modules/powerline.tin};
 #READ {src/modules/saving_throw.tin};

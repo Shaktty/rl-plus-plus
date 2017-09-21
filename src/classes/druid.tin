@@ -13,6 +13,10 @@
  * Highlights                                                                                                         *
  **********************************************************************************************************************/
 
+#HIGHLIGHT {Nubes negras de tormenta se ciernen sobre el área.} {<cfa>} {5};
+#HIGHLIGHT {Alzas el puño hacia el cielo, y este retumba y relampaguea como respuesta.} {<CAF>} {5};
+#HIGHLIGHT {%1 rayos caen desde el cielo envolviéndolo todo en un caos.} {<caf>} {5};
+
 /*
  * Warning
  */
