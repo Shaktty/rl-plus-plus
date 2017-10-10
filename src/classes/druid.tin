@@ -10,9 +10,76 @@
 /register_module {RL_DRUID} {Clases: Druida} {Utilidades comunes para druidas.};
 
 /**********************************************************************************************************************
+ * Actions                                                                                                            *
+ **********************************************************************************************************************/
+
+#ACTION {^Hostigas a %*$} {
+    #DELAY {9} {
+        /message_cooldown {Hiena: Dentellada};
+    };
+};
+
+#ACTION {^Una ululante ráfaga de viento %*$} {
+    #DELAY {600} {
+        /message_cooldown {Clamar Descanso};
+    };
+};
+
+#ACTION {^+ Comienzas a moverte tentativamente alrededor {desde tu escondite |}los movimientos %*$} {
+    #DELAY {9} {
+        /message_cooldown {Pantera: Abalanzarse};
+    };
+};
+
+#ACTION {^+ Te mueves en silencio alrededor de Babosa, tensando %*$} {
+    #DELAY {9} {
+        /message_cooldown {Pantera: Abalanzarse Escondido};
+    };
+};
+#ACTION {^Te relames ansiando retener entre tus mandíbulas %*$} {
+    #DELAY {30} {
+        /message_cooldown {Cocodrilo: Mordisco};
+    };
+};
+#ACTION {^# Desgarras la carne %*$} {
+    #DELAY {5} {
+        /message_cooldown {Cocodrilo: Desgarrar};
+    };
+};
+#ACTION {^+ Tensando los músculos, retraes %*$} {
+    #DELAY {9} {
+        /message_cooldown {Oso: Zarpazo};
+    };
+};
+#ACTION {^Te tiras salvajemente sobre el cuerpo %*$} {
+    #DELAY {900} {
+        /message_cooldown {Cocodrilo: Desgarrar};
+    };
+};
+#ACTION {^Sientes como tu boca se hincha cuando tensas tu lengua %*$} {
+    #DELAY {9} {
+        /message_cooldown {Rana: Engullir};
+    };
+};
+#ACTION {^Das un ágil salto y te escondes tras la maleza de la zona %*$} {
+    #DELAY {3000} {
+        /message_cooldown {Rana: Desaparecer};
+    };
+};
+/**********************************************************************************************************************
+#NOP       #ACTION {^ {desde tu escondite |}los movimientos %*$} {
+#NOP           #DELAY { } {
+#NOP               /message_cooldown {};
+#NOP           };
+#NOP       };
+ **********************************************************************************************************************/
+
+/**********************************************************************************************************************
  * Highlights                                                                                                         *
  **********************************************************************************************************************/
 
+#HIGHLIGHT {[Tu fe en %1 ha disminuído en %2 puntos]} {<CAF>} {5};
+#HIGHLIGHT {Tu letanía a %1 contin{ú|u}a y sientes %*$} {<fca>} {5};
 #HIGHLIGHT {Nubes negras de tormenta se ciernen sobre el área.} {<cfa>} {5};
 #HIGHLIGHT {Alzas el puño hacia el cielo, y este retumba y relampaguea como respuesta.} {<CAF>} {5};
 #HIGHLIGHT {%1 rayos caen desde el cielo envolviéndolo todo en un caos.} {<caf>} {5};

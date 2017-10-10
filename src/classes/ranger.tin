@@ -40,7 +40,7 @@
 };
 
 #ACTION {^Ordenas a %* habilidad picado sobre %2} {
-    #DELAY {18} {
+    #DELAY {17} {
         /message_cooldown {Picado};
     };
 };

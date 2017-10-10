@@ -1,0 +1,15 @@
+#class {RL_LANG} {kill};
+#class {RL_LANG} {open};
+
+#FUNCTION {member_of} {
+    #NOP TODO: Use #LIST index?;
+    #FOREACH {%1} {item} {
+        #IF {"$item" == "%2"} {
+            #RETURN {1};
+        };
+    };
+    #RETURN {0};
+};
+
+
+#class {RL_LANG} {close};

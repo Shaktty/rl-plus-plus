@@ -26,8 +26,6 @@
 #READ {src/modules/target.tin};
 #READ {src/modules/combat.tin};
 
-#READ {src/classes/druid.tin};
-#READ {src/classes/thief.tin};
 #READ {src/classes/caster.tin};
 #READ {src/classes/hunter.tin};
 #READ {src/classes/priest.tin};
@@ -41,6 +39,11 @@
 #READ {src/classes/ranger.tin};
 #READ {src/classes/wizwar.tin};
 
+#READ {src/classes/thief.tin};
+#READ {src/classes/druid.tin};
 #READ {data/armory.tin};
+
+#NOP
+#NOP  #READ {src/custom/saya.tin};
 
 #CLASS {RL_BOOTLOADER} {close};
