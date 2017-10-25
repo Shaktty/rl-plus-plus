@@ -13,8 +13,8 @@
  * Actions                                                                                                            *
  **********************************************************************************************************************/
 
-#ACTION {^Hostigas a %*$} {
-    #DELAY {9} {
+#ACTION {^# Hostigas a %*$} {
+    #DELAY 6} {
         /message_cooldown {Hiena: Dentellada};
     };
 };
@@ -25,14 +25,14 @@
     };
 };
 
-#ACTION {^+ Comienzas a moverte tentativamente alrededor {desde tu escondite |}los movimientos %*$} {
-    #DELAY {9} {
+#ACTION {^+ Comienzas a moverte tentativamente alrededor %*$} {
+    #DELAY {11} {
         /message_cooldown {Pantera: Abalanzarse};
     };
 };
 
-#ACTION {^+ Te mueves en silencio alrededor de Babosa, tensando %*$} {
-    #DELAY {9} {
+    #DELAY {10} {
+#ACTION {^+ Te mueves en silencio alrededor de %*$} {
         /message_cooldown {Pantera: Abalanzarse Escondido};
     };
 };
@@ -47,7 +47,7 @@
     };
 };
 #ACTION {^+ Tensando los músculos, retraes %*$} {
-    #DELAY {9} {
+    #DELAY {10} {
         /message_cooldown {Oso: Zarpazo};
     };
 };

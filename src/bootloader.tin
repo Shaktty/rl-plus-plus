@@ -43,7 +43,7 @@
 #READ {src/classes/druid.tin};
 #READ {data/armory.tin};
 
-#NOP
-#NOP  #READ {src/custom/saya.tin};
+
+#NOP #READ {src/custom/saya.tin};
 
 #CLASS {RL_BOOTLOADER} {close};

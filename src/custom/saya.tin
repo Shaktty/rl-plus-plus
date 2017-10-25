@@ -11,20 +11,20 @@
 /register_module {RL_SAYA} {srumbo} {Recorrido automático de caminos (como el comando galopar).};
 /add_module_setting {RL_SAYA} {delay} {number} {} {1} {Segundos entre dirección y dirección};
 /*
-*EVENT {PROGRAM START}
-*{
-*	#system {clear};
-*	#showme <fac>@center{Reinos de Leyenda - http://reinosdeleyenda.org};
-*	#showme <fca>;
-*	#showme <acf>Jugador?
-*}
-*
-*#EVENT {SESSION CONNECTED}
-*{
-*	$pj;
-*	$passwd;
-	/log on;
-*}
+#*EVENT {PROGRAM START}
+#*{
+#*	#system {clear};
+#*	#showme <fac>@center{Reinos de Leyenda - http://reinosdeleyenda.org};
+#*	#showme <fca>;
+#*	#showme <acf>Jugador?
+#*}
+#*
+#*#EVENT {SESSION CONNECTED}
+#*{
+#*	$pj;
+#*	$passwd;
+#	/log on;
+#*}
 */
 /**********************************************************************************************************************
  * Aliases                                                                                                            *
@@ -34,6 +34,7 @@
  *       #CLASS {RL_SAYA_IMPL} {close};
  *   }
 */
+#VAR pj {saya};
 #ALIAS {0} { esconderse arbol } {5};
 #ALIAS {00} { ordenar ejecutar dentellada sobre $target } {5};
 #ALIAS {8} { ordenar ejecutar acosar sobre $target,%0,$nicks,$xp } {5};
@@ -83,7 +84,6 @@
 #ALIAS {wii} { blandir $rarm; blandir $larm } {5};
 #ALIAS {x} { cazar $target,%0,$nicks } {5};
 #ALIAS {z} { doblegolpe $target,%0,$nicks } {5};
-
 #SUBSTITUTE       {^%1 se desploma a causa de la pérdida de sangre} {<fac>%1 <099>se desploma a causa de la pérdida de sangre  <119> STUN STUN!<099>}  {5};
 #VARIABLE         {conc}  {SI };
 #VARIABLE         {f10var}  {ac};
