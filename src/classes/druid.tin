@@ -14,7 +14,7 @@
  **********************************************************************************************************************/
 
 #ACTION {^# Hostigas a %*$} {
-    #DELAY 6} {
+    #DELAY {6} {
         /message_cooldown {Hiena: Dentellada};
     };
 };
@@ -66,23 +66,33 @@
         /message_cooldown {Rana: Desaparecer};
     };
 };
+
+#ACTION {^Posas tu mano sobre tu Faltriquera de la Germinación y notas %*$} {
+    #DELAY {180} {
+        /message_cooldown {Rana: Germimar};
+    };
+};
+
 /**********************************************************************************************************************
 #NOP       #ACTION {^ {desde tu escondite |}los movimientos %*$} {
 #NOP           #DELAY { } {
 #NOP               /message_cooldown {};
 #NOP           };
 #NOP       };
- **********************************************************************************************************************/
+**************************************/
 
 /**********************************************************************************************************************
  * Highlights                                                                                                         *
  **********************************************************************************************************************/
 
+#HIGHLIGHT {Consigues sobreponerte al dolor de tus piernas y levantarte} {<FCA>} {5};
+#HIGHLIGHT {Tienes que esperar a que estés en una posición mejor si quieres lanzar otro ataque como ese} nCA>} {5};
 #HIGHLIGHT {[Tu fe en %1 ha disminuído en %2 puntos]} {<CAF>} {5};
 #HIGHLIGHT {Tu letanía a %1 contin{ú|u}a y sientes %*$} {<fca>} {5};
 #HIGHLIGHT {Nubes negras de tormenta se ciernen sobre el área.} {<cfa>} {5};
 #HIGHLIGHT {Alzas el puño hacia el cielo, y este retumba y relampaguea como respuesta.} {<CAF>} {5};
 #HIGHLIGHT {%1 rayos caen desde el cielo envolviéndolo todo en un caos.} {<caf>} {5};
+#HIGHLIGHT {En tu estado polimorfado te es imposible formular el hechizo} {<ACF>} {5};
 
 /*
  * Warning
