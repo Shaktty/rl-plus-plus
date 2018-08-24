@@ -119,7 +119,7 @@
     #VAR {gmcp_data_channel_name} {$gmcp_data_channel_data[canal]};
     #VAR {gmcp_data_channel_message} {$gmcp_data_channel_data[mensaje]};
     #REPLACE {gmcp_data_channel_message} {u001B} {e};
-    #NOP #SHOWME {$gmcp_data_channel_name};
+    #SHOWME {$gmcp_data_channel_name};
     #SHOWME {$gmcp_data_channel_message};
     #UNVAR {gmcp_data_channel_data};
     #UNVAR {gmcp_data_channel_name};

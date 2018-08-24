@@ -2,15 +2,11 @@
 #CLASS {RL_BOOTLOADER} {open};
 
 #READ {src/system/config.tin};
-#READ {src/system/event.tin};
-
 #READ {src/common/lang.tin};
 #READ {src/common/format.tin};
 #READ {src/common/i18n.tin};
-
 #READ {src/alias.tin};
 #READ {src/highlight.tin};
-
 #READ {src/module.tin};
 #READ {src/modules/chants.tin};
 #READ {src/modules/environment.tin};
@@ -25,25 +21,19 @@
 #READ {src/modules/shape.tin};
 #READ {src/modules/target.tin};
 #READ {src/modules/combat.tin};
-
 #READ {src/classes/caster.tin};
 #READ {src/classes/hunter.tin};
 #READ {src/classes/priest.tin};
 #READ {src/classes/rogue.tin};
 #READ {src/classes/wizard.tin};
-
 #READ {src/classes/barbarian.tin};
 #READ {src/classes/fighter.tin};
 #READ {src/classes/gragbadur.tin};
 #READ {src/classes/marksman.tin};
 #READ {src/classes/ranger.tin};
 #READ {src/classes/wizwar.tin};
-
 #READ {src/classes/thief.tin};
 #READ {src/classes/druid.tin};
 #READ {data/armory.tin};
-
-
-#NOP #READ {src/custom/saya.tin};
 
 #CLASS {RL_BOOTLOADER} {close};

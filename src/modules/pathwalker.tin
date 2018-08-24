@@ -16,20 +16,20 @@
  **********************************************************************************************************************/
 
 /*
- * Alias /srumbo {direction|off}
+ * Alias /rumbo {direction|off}
  *
- * Walks a straight path towards the given direction, cloaked
+ * Walks a straight path towards the given direction
  *
  * Arguments:
  *   %1 (any) direction|off
  *
  * Example:
- *   /srumbo {e};
+ *   /rumbo {e};
  */
-#ALIAS {/srumbo} {
+#ALIAS {/rumbo} {
     #CLASS {RL_PATHWALKER_IMPL} {open};
     #IF {"%1" == ""} {
-        /message {Sintáxis: /srumbo <dirección|off>};
+        /message {Sintáxis: /rumbo <dirección|off>};
         #RETURN;
     };
     #ALIAS {/limpiar_rumbo} {

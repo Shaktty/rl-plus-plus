@@ -4,8 +4,8 @@ consentir tiradas on
 consentir detallado off
 consentir menus off
 alias save salvar
-alias g ojear $*$
-alias l mirar $*$
+alias l ojear $*$
+alias ll mirar $*$
 alias quit salir
 alias scc sc -v
 alias sca sc -a
@@ -29,11 +29,11 @@ alias env envainar $arg:arma$
 alias emp empuñar $arg:arma$
 \alias arma nick arma $*$;alias mp maestria $*$
 alias ap abrir $*$
-alias cp cerrar $*$
-alias mm mirarme
+alias cr cerrar $*$
+alias ii mirarme
 alias cv conversar $*$
 alias cm coger monedas de cuerpos
-alias x noticias $*$
+alias news noticias $*$
 alias fc ficha cuenta $*$
 alias lev levantarse
 alias aga agacharse

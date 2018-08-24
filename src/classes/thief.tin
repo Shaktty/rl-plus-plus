@@ -8,34 +8,109 @@
  **********************************************************************************************************************/
 
 /register_module {RL_THIEF} {Clases: Ladrones} {Utilidades para cazadores.};
-
 #ALIAS {ax} { /x; cnick xp x } {5};
+
 /**********************************************************************************************************************
  * Actions                                                                                                            *
  **********************************************************************************************************************/
 #ACTION {Vislumbras una} {jj} {5};
 
+#NOP puya 9s;
+#ACTION {^# {Clavas|Hundes|¡Oh, vaya,|¡Alcanzas criticamente} %*$} {
+    #DELAY {9} {
+        /message_cooldown {Puya};
+    };
+};
+
+#ACTION {^Te concentras para conseguir hacerte con%*$} {
+    #DELAY {980} {
+        /message_cooldown {Robar};
+    };
+};
+
+#ACTION {^Consigues robar a %1, aunque parece que se ha dado cuenta%*$} {
+    #DELAY {700} {
+        /message_cooldown {Robar};
+    };
+};
+
+#ACTION {^¡Te acaban de descubrir!, ¡sería inútil intentar hacerlo a plena vista!} {
+   #DELAY {60} {
+        /message_cooldown {Sigilo y Subterfugio};
+  };
+};
+#ACTION {^¡Una extraña energía recorre tu cuerpo, haciéndote sentir presto y fugaz!} {
+   #DELAY {100} {
+        /message_cooldown {Celeridad Off};
+  };
+};
+
 /**********************************************************************************************************************
  * Highlights                                                                                                         *
  **********************************************************************************************************************/
+#HIGHLIGHT {^Tu última maniobra de apuñalar te ha dejado momentáneamente agotada, por lo que tendrás que esperar antes de realizar otra.$} {blink,red} {5};
+#HIGHLIGHT {^Estás siendo atacada por %1} {blink,red} {5};
+#HIGHLIGHT  {¡Alcanzas criticamente a } {red,bold} {5};
+#HIGHLIGHT  {¡Una extraña energía recorre tu cuerpo, haciéndote sentir presto y fugaz!} {bold,magenta}  {5};
+#HIGHLIGHT  {Tu capacidad de movimiento vuelve a su estado normal} {magenta}  {5};
+#HIGHLIGHT  {¡Tu ataque busca una localización desprotegida de $1} {bold,green}  {5};
+#HIGHLIGHT  {Copias el nick xp al nick x quedando}                  {magenta}  {5};
+#HIGHLIGHT  {¡Tu golpe causa una profunda herida a %1}                  {bold,red}  {5};
+#HIGHLIGHT  {Entierras cuerpo de %1 bajo tierra}                {<cfa>}  {5};
+#HIGHLIGHT  {Nombre corto %1 cambiado de }          {orange}  {5};
+#HIGHLIGHT  {Te encaras contra %1 en posicón de combate.}                          {bold,red}  {5};
+#HIGHLIGHT  {¡Lanzas un ataque de oportunidad contra %1!}                          {bold,magenta}  {5};
+#HIGHLIGHT  {¡Logras pillar desprevenido a %1!}                {bold,magenta}  {5};
+#HIGHLIGHT  {¡Obtienes una maestría en %1 gracias a la experiencia adquirida en tu puñalada!} {bold,cyan}  {5};
+#HIGHLIGHT  {Izquierdo}  {red bold}  {10};
+#HIGHLIGHT  {¡Tu ataque busca una localización desprotegida de %0} {bold,magenta} {5};
+#HIGHLIGHT  {^Consigues ver los siguientes objetos al espiar a} {<fca>} {5};
+#HIGHLIGHT  {^¡Te acaban de descubrir!, ¡sería inútil intentar hacerlo a plena vista!} {blink,red} {5};
+#HIGHLIGHT  {^%1* es una adquisición reciente y no quieres desprenderte de ella.} {cyan,bold} {5};
+#HIGHLIGHT  {Consigues robar a %1, aunque parece que se ha dado cuenta.} {<CAF>} {5};
 
-#HIGHLIGHT        {Copias el nick xp al nick x quedando}                  {magenta}  {5};
-#HIGHLIGHT        {Entierras cuerpo de %1 bajo tierra}                {<cfa>}  {5};
-#HIGHLIGHT        {Nombre corto %1 cambiado de }          {orange}  {5};
-#HIGHLIGHT        {Te encaras contra %1 en posicón de combate.}                          {bold,red}  {5};
-#HIGHLIGHT        {¡Lanzas un ataque de oportunidad contra %1!}                          {bold,magenta}  {5};
-#HIGHLIGHT        {¡Logras pillar desprevenido a %1!}                {bold,magenta}  {5};
-#HIGHLIGHT        {¡Obtienes una maestría en %1 gracias a la experiencia adquirida en tu puñalada!} {bold,cyan}  {5};
-#HIGHLIGHT        {Izquierdo}  {red bold}  {10};
+
+
+#READ {src/numpad_sigilar.tin};
+
+#ALIAS {0} { esconderse arbol } {5};
+#ALIAS {bbb} { bando !  } {5};
+#ALIAS {news} {noticias } {5};
+#ALIAS {cgo} { ordenar coger todo de cuerpos } {5};
+#ALIAS {ct} { contrarrestar x } {5};
+#ALIAS {di} { disipar x } {5};
+#ALIAS {dii} { disipar x espejismo } {5};
+#ALIAS {dip} { disipar x piel de piedra } {5};
+#ALIAS {ldenv} { desenvainar $larm } {5};
+#ALIAS {lenv} { envainar $larm } {5};
+#ALIAS {toma} { poner %1 en ancestral } {5};
+#ALIAS {unwii} { envainar todo } {5};
+#ALIAS {wii} { blandir $rarm; blandir $larm } {5};
+
+#VARIABLE         {f10var}  {jj};
+#VARIABLE         {f11var}  {j};
+#VARIABLE         {f12var}  {ee};
+#VARIABLE         {f1var}  {et};
+#VARIABLE         {f2var}  {rm};
+#VARIABLE         {f3var}  {r};
+#VARIABLE         {f4var}  {j};
+#VARIABLE         {f5var}  {subetu};
+#VARIABLE         {f6var}  {ee};
+#VARIABLE         {f7var}  {asal};
+#VARIABLE         {f8var}  {huir};
+#VARIABLE         {f9var}  {at};
+#VARIABLE         {larm}  {nubladora};
+#VARIABLE         {rarm}  {sombrio};
 
 /**********************************************************************************************************************
  * Testing                                                                                                            *
  **********************************************************************************************************************/
 
 #IF {$_development == 1} {
-    #ALIAS {/test_RL_HUNTER} {
+    #ALIAS {/test_RL_THIEF} {
         #SHOWME {No tests implemented.};
     };
 };
 
-#CLASS {RL_HUNTER} {close};
+#CLASS {RL_THIEF} {close};
+

@@ -1,0 +1,49 @@
+#CLASS {RL_JOISAN} {kill};
+#CLASS {RL_JOISAN} {open};
+
+/**********************************************************************************************************************
+ * Module RL_JOISAN                                                                                               *
+ *                                                                                                                    *
+ * Runs -hidden-  automatically through straight paths                                                                          *
+ **********************************************************************************************************************/
+
+/register_module {RL_JOISAN} {srumbo} {Recorrido automático de caminos (como el comando galopar).};
+/add_module_setting {RL_JOISAN} {delay} {number} {} {1} {Segundos entre dirección y dirección};
+
+/**********************************************************************************************************************
+ * Aliases                                                                                                            *
+ **********************************************************************************************************************/
+
+#VAR pj {joisan};
+#ALIAS {bb} { bando @%^BOLD%^BLACK%^Ignis (%^MAGENTA%^M-L%^BLACK%^)%^RED%^: %^B_BLUE%^BOLD%^ORANGE%^ %0 %^RESET%^ } {5};
+#ALIAS {c} { chat @%^BOLD%^BLACK%^Ignis %^RESET%^MAGENTA%^pronuncia%^RESET%^ algo de entre las %^BLACK%^BOLD%^S%^RESET%^ombras y dice: %^BOLD%^MAGENTA%^%0%^RESET%^ } {5};
+#ALIAS {ch0} { chat @deja de %^ORANGE%^divisar %^WHITE%^el %^WHITE%^h%^BOLD%^o%^BLUE%^r%^RESET%^BLUE%^i%^ORANGE%^zo%^BOLD%^n%^WHITE%^t%^RESET%^e, y dice: %^GREEN%^%0%^RESET%^ } {5};
+#ALIAS {fa} { familia @la %^RED%^M%^BOLD%^BLACK%^atrona %^WHITE%^: %^MAGENTA%^%0%^RESET%^ } {5};
+#ALIAS {ib} { interbando @%^BOLD%^BLACK%^Ignis (%^MAGENTA%^M-L%^BLACK%^)%^RED%^: %^B_BLUE%^BOLD%^ORANGE%^ %0 %^RESET%^ } {5};
+#ALIAS {uu} { ciu @%^BOLD%^BLACK%^Ignis (%^MAGENTA%^M-L%^BLACK%^)%^RED%^: %^B_MAGENTA%^WHITE%^ %0 %^RESET%^ } {5};
+
+#HIGHLIGHT        {bola de fuego}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {bola encadenada de fuego}      {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {defenestrar}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {desintegrar}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {devolver conjuro menor}    {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {escudo}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {flecha acida de dvneil}    {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {flecha de llamas}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {golpe de rayo}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {mano espectral}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {muro de niebla}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {nube de frio}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {nube hedionda}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {ojo por ojo}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {piel de piedra}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {proteccion bien}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {proyectil magico mayor}    {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {sangre a acido}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {silueta imprecisa}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {tormenta de electrica}   {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {tormenta de hielo}  {bold,reverse,yellow}  {5};
+#HIGHLIGHT        {tormenta electrica}  {bold,reverse,yellow}  {5};
+#conf {COMMAND COLOR} {<caf>};
+
+#CLASS {RL_JOISAN} {close};

@@ -13,6 +13,7 @@
  * Substitutions                                                                                                      *
  **********************************************************************************************************************/
 
+#SUBSTITUTE {{^|[}llega {desde el|de} %w} { %1 llega desde %1 <BCA><178> @exit_short_name{%2} <099>};
 #SUBSTITUTE {se va {hacia el|hacia|en dirección} %w} {se va %1 <BCA><178> @exit_short_name{%2} <099>};
 #SUBSTITUTE {^[%* orbita a Eirea]$} {[%1 <bee>entra<099> a Eirea]};
 #SUBSTITUTE {^[%* orbita al Limbo]$} {[%1 <g10>sale<099> de Eirea]};
@@ -22,6 +23,11 @@
  **********************************************************************************************************************/
 
 #HIGHLIGHT {^%* te sigue.$} {bold magenta} {5};
+#HIGHLIGHT {^Empiezas a calmarte y reconsiderar a tus enemigos...$} {bold cyan} {5};
+#HIGHLIGHT {^%* deja de formular.$} {bold magenta} {5};
+#HIGHLIGHT {^Das esquinazo a %*.$} {bold green} {5};
+#HIGHLIGHT {^Nadie está persiguiéndote en estos momentos.$} {bold green} {5};
+#HIGHLIGHT {^No es posible sigilar, estás inmers{a|o} en una lucha.$} {bold red} {5};
 
 #NOP TODO: autofollow of targets with F1 magic key;
 #NOP TODO: show exits in powerbar;

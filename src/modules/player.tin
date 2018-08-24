@@ -156,7 +156,15 @@
     #VAR {rl_player[stats][social_points]} {%9};
 };
 
-#ACTION {^Pvs: %1\\%2 Pe: %3\\%4$} {
+#ACTION {^Puntos de Vida        : [%1] (%2/%3) (%4) } {
+    #VAR {rl_player[stats][health]} {%2};
+};
+
+#ACTION {^Puntos de Energía     : [%1] (%2/%3) (%4)} {
+    #VAR {rl_player[stats][energy]} {%2};
+};
+
+#ACTION {{^|[}Pvs: %1\\%2 Pe: %3\\%4$} {
     #VAR {rl_player[stats][health]} {%1};
     #VAR {rl_player[stats][health_max]} {%2};
     #VAR {rl_player[stats][energy]} {%3};

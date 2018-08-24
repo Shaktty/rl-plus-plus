@@ -16,7 +16,7 @@
  **********************************************************************************************************************/
 
 /*
- * Alias /ssrumbo {direction|off}
+ * Alias /srumbo {direction|off}
  *
  * Walks a straight path towards the given direction, cloaked
  *
@@ -24,9 +24,9 @@
  *   %1 (any) direction|off
  *
  * Example:
- *   /ssrumbo {e};
+ *   /srumbo {e};
  */
-#ALIAS {/ssrumbo} {
+#ALIAS {/srumbo} {
     #CLASS {RL_SWALKER_IMPL} {open};
     #IF {"%1" == ""} {
         /message {Sintáxis: /ssrumbo <dirección|off>};
@@ -70,7 +70,7 @@
         /limpiar_srumbo {Deteniendo el srumbo, pues algo raro ha sucedido.};
     };
     /message {Sigilando srumbo %1...};
-    #SEND {%1};
+    #SEND {sigilar %1};
     #CLASS {RL_SWALKER_IMPL} {close};
 }
 

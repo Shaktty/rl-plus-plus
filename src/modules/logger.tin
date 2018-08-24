@@ -28,7 +28,7 @@
 #ALIAS {/log} {
 	#IF {"%0" == "on"} {
 		#IF {"$logging" != "on"} {
-			#FORMAT {logfile} {log/%t.log} {%Y-%m-%d};
+			#FORMAT {logfile} {log/%t.html} {%Y-%m-%d};
             #LOG {APPEND} {$logfile};
             #VAR {logging} {on};
             /message {Grabando...};
