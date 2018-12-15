@@ -1,21 +1,19 @@
 #CLASS {RL_SAYA} {kill};
 #CLASS {RL_SAYA} {open};
-
-
 /**********************************************************************************************************************
  * Module RL_SAYA                                                                                               *
  *                                                                                                                    *
  * Runs -hidden-  automatically through straight paths                                                                          *
  **********************************************************************************************************************/
-
 /register_module {RL_SAYA} {srumbo} {Recorrido automático de caminos (como el comando galopar).};
 /add_module_setting {RL_SAYA} {delay} {number} {} {1} {Segundos entre dirección y dirección};
-
 /**********************************************************************************************************************
  * Aliases                                                                                                            *
  **********************************************************************************************************************/
 
 #VAR pj {saya};
+#READ {src/classes/ranger.tin};
+#READ {src/numpad_sigilar.tin};
 #ALIAS {0} { esconderse arbol } {5};
 #ALIAS {00} { ordenar ejecutar dentellada sobre x } {5};
 #ALIAS {8} { ordenar ejecutar acosar sobre x } {5};
@@ -53,23 +51,22 @@
 #ALIAS {toma} { poner %1 en ancestral } {5};
 #ALIAS {unwii} { envainar todo } {5};
 #ALIAS {wii} { blandir $rarm; blandir $larm } {5};
-
 #SUBSTITUTE       {^%1 se desploma a causa de la pérdida de sangre} {<fac>%1 <099>se desploma a causa de la pérdida de sangre  <119> STUN STUN!<099>}  {5};
 #VARIABLE         {conc}  {SI };
-#VARIABLE         {f10var}  {ac};
-#VARIABLE         {f11var}  {x};
-#VARIABLE         {f12var}  {ee};
-#VARIABLE         {f1var}  {1};
-#VARIABLE         {f2var}  {j};
-#VARIABLE         {f3var}  {q};
-#VARIABLE         {f4var}  {qq};
-#VARIABLE         {f5var}  {subetu};
-#VARIABLE         {f6var}  {00};
-#VARIABLE         {f7var}  {88};
-#VARIABLE         {f8var}  {k};
-#VARIABLE         {f9var}  {at};
-#VARIABLE         {invoca}  {ancestral};
-#VARIABLE         {larm}  {coral};
+#NOP #VARIABLE         {f10var}  {ac};
+#NOP #VARIABLE         {f11var}  {x};
+#NOP #VARIABLE         {f12var}  {ee};
+#NOP #VARIABLE         {f1var}  {1};
+#NOP #VARIABLE         {f2var}  {j};
+#NOP #VARIABLE         {f3var}  {q};
+#NOP #VARIABLE         {f4var}  {qq};
+#NOP #VARIABLE         {f5var}  {subetu};
+#NOP #VARIABLE         {f6var}  {00};
+#NOP #VARIABLE         {f7var}  {88};
+#NOP #VARIABLE         {f8var}  {k};
+#NOP #VARIABLE         {f9var}  {at};
+#NOP #VARIABLE         {invoca}  {ancestral};
+#NOP #VARIABLE         {larm}  {coral};
 
 
 #CLASS {RL_SAYA} {close};

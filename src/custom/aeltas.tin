@@ -1,0 +1,308 @@
+#CLASS {RL_AELTAS} {kill};
+#CLASS {RL_AELTAS} {open};
+
+/**********************************************************************************************************************
+ * Module RL_AELTAS                                                                                                   *
+ *                                                                                                                    *
+ * Functionalities for the marksman class.                                                                            *
+ **********************************************************************************************************************/
+
+/register_module {RL_AELTAS} {AELTAS - Maga Semi-Drow - } {.};
+#VARIABLE {pj} {aeltas};
+#READ {src/classes/wizard.tin};
+#READ {src/classes/caster.tin};
+#READ {src/numpad.tin};
+#ALIAS {cgo} {coger cotas,botas,grebas,bolsas,filos,insignias,capas de cuerpos} {5};
+
+
+/**********************************************************************************************************************
+ * Aliases                                                                                                            *
+* CONFIG MADRE -
+* cosas sin objeto o sobre pj -- aqui.. highs, subs..
+* timer resets -> caster.tin
+* cosas de nick x -> alias ficha O:Lista alias a borrar ... alias a anyadir... 1 11 111 .. pk ?
+* Macros F1-F4 F5-F8 F9-F12 (4 ataque, 4 defe/rango, 4 estado x, par/silu, simu, etc..
+**/
+#NOP Alias sobre hechicero/arg -> wizard.tin (disipar, detectar, etc..)
+#NOP Alias contra nick -> ficha del mud (borrar de aqui y lista de ficha)
+#NOP Alias contra 1 nick (seguir) -> ? aeltas.tin?
+#NOP HIGH y SUBS genericos en wizard.tin -> aqui con $pj con idea de mover a wizard.tin usando pj (double whammy)
+#UNALIAS {dii};
+#UNALIAS {0};
+#ALIAS {pasta} {riquezas %0} {5};
+#ALIAS {ptt} {dejar grasas,tendones,carnes;poner jamones,curtir,colmillos en mochila;poner pieles en petate} {5};
+#ALIAS {mt} {mirar petate} {5};
+/***
+ hechizos Conoces los siguientes hechizos:
+agrandar                                   espada de galadan                          ojo vago de khadaon
+amistad                                    espejismo                                  olvidar
+armadura                                   estallido de fuego                         oscuridad
+armadura espiritual                        parpadeo
+aura magica de nystul                      perro fiel de mesua
+bola de agua                               
+bola de fuego                              piel de piedra
+precognicion
+bolsillos profundos                        presa sacudidora
+borrar                                     fuerza                                     proteccion contra armas comunes
+caida de pluma                             globo mayor de invulnerabilidad            proteccion contra armas magicas
+cambio de sexo                             globo menor de invulnerabilidad            proteccion contra proyectiles
+cantrip                                    golpe de rayo                              proteccion electrico
+              golpe ilusorio                             proteccion fuego
+              granizo                                    provocar
+                     ilustracion arcana                         cavar                                      
+imbecilidad                                
+incontrolable risa de shasha               reducir
+clariaudiencia                             indetectable                               repudiar
+cono de frio                               infravision                                repulsion
+conocer alineamiento                       insensibilidad                             resfriar
+conservar cuerpo                           intoxicar                                  resistir acido
+consuncion de los restos                   invocar elemental                          resistir aire
+contenedor dimensional                     irritacion                                 resistir bien
+contrahechizo                              leer magia                                 resistir electrico
+crear quimera menor                        lentitud                                   resistir enfermedad
+cuerpo de acero                            lepra                                      resistir frio
+debilidad                                  llamada a la puerta                        resistir fuego
+debilidad frio                             resistir magico
+defenestrar                                resistir mal
+localizar objeto                           resistir mental
+destruir muro                              luz                                        resistir veneno
+detectar magia                             retener muertos vivientes
+detectar magias bloqueadas                 mano espectral                             revelar secretos
+detectar observacion magica                manos ardientes                            sangre a acido
+devolver conjuro mayor                     marca de hechicero                         silueta imprecisa
+devolver conjuro menor                      simulacro
+disco flotante de ikim                     miedo                                      sirviente invisible
+disipar ilusiones                          montura                                    sobriedad
+disipar magia                              muro de aire                               sordera
+dispersion ilusoria                        muro de fuego                              telaraña
+dormir                                     muro de fuerza                             
+encantar arma                              muro de niebla                             
+erudicion en batallas                      muro ilusorio                              tormenta de hielo
+escudo                                     nube de frio                               tormenta electrica
+escudo de energia                          nube hedionda                              transformacion de dvneil
+esfera elastica de wylan                   oclumancia                                 ventriloquia
+ojo por ojo
+7 verborrea (28)
+7 tormenta acida (28)
+7 proteccion veneno (28)
+7 proteccion tierra (28)
+7 proteccion mental (28)
+7 proteccion magico (28)
+7 proteccion frio (28)
+7 proteccion enfermedad (28)
+7 proteccion aire (28)
+7 proteccion agua (28)
+7 proteccion acido (28)
+7 ocultar (28)
+7 debilidad fuego (28)
+6 relampago sombra (24)
+6 proteccion mal (24)
+6 proteccion bien (24)
+6 desintegrar (24)
+4 simular alineamiento (16)
+4 reclamar (16)
+Hechizos disponibles Desde 1 hasta 19 de 23 (82%) - a para ayuda.
+
+4 muro de hielo (16)
+4 crear muerto-viviente menor (28)
+3 resistir tierra (12)
+3 resistir agua (12)
+****/
+
+/*****************************************************************************
+*  alias ficha 
+* lista de borrar -- Huecos left --> lista add
+****** -- Borrar de aqui los de x de la ficha --- ******
+** quedan sobre pj/otro, chats, alias --> locales liberar alias en ficha
+******
+ww: formular esfera elastica de wylan:$arg:tgt$
+uu: ciu @la %^BOLD%^M%^RESET%^aga %^RED%^S%^RESET%^alvaje: %^CYAN%^BOLD%^$*$%^RESET%^
+tt: tell $1$ %^B_BLUE%^BOLD%^ORANGE%^$2*$%^RESET%^
+shs: shalafi msjs %^RED%^BOLD%^$*$%^RESET%^
+sha: shalafi msja %^MAGENTA%^BOLD%^$*$%^RESET%^
+ppr: formular proteccion contra proyectiles:$arg:aeltas$
+pi: poner pendiente en mochila;coger petreo de mochila;ponerse petreo;formular piel de piedra:aeltas
+pam: formular proteccion contra armas magicas:$arg:aeltas$
+pac: formular proteccion contra armas comunes:lochlan
+mesua: formular perro fiel de mesua:aeltas
+inv: formular invocar elemental:$arg:tipo$
+ib: interbando @la %^MAGENTA%^M%^RESET%^aga: %^RED%^$*$%^
+dv: formular transformacion de dvneil:aeltas
+dong: formular llamada a la puerta:cerrar $*$
+dip: formular disipar magia:$arg:x piel$
+devv: formular devolver conjuro mayor:aeltas
+devo: formular devolver conjuro menor:aeltas
+c: chat @la Maga%^BLUE%^: %^BOLD%^GREEN%^$*$%^RESET%^
+bols: formular bolsillos profundos:aeltas
+bolm: formular globo menor de invulnerabilidad:$arg:aeltas$
+bola: formular globo mayor de invulnerabilidad:$arg:aeltas$
+bb: bando @la Maga: %^RED%^BOLD%^$*$%^RESET%^
+arma: nick arma $*$;alias mp maestria $*$
+pm: formular proteccion magico:aeltas
+esp: formular espejismo:aeltas
+pd: poner $*$ en disco                     
+esco: formular escudo de energia:aeltas
+to: neruandi $arg:x$                       
+par: formular parpadeo:aeltas              
+esc: formular escudo:$arg:aeltas$
+
+th: formular tormenta de hielo:$arg:x$     
+
+p: perder $arg:todo$                       
+env: envainar $arg:arma$
+tel: formular telaraña:$arg:aqui$          
+osc: formular oscuridad:tea                
+emp: empuñar $arg:arma$
+
+cc u:e: formular tormenta electrica:$arg:x$    
+
+oro: coger monedas de cuerpos              
+
+ef: formular estallido de fuego:x
+
+tarear: nickear x matar                    
+
+olv: formular olvidar:$arg:x$              
+do: formular dormir:$arg:x$
+t: formular cono de frio:$arg:x$           
+
+ojo: formular ojo por ojo:aeltas           
+
+disco: formular disco flotante de ikim
+
+subetu: envainar todo;trepar arbol         
+oir: formular clariaudiencia               
+dii: formular disipar magia:aeltas $*$
+ss: formular dispersion ilusoria:aeltas    
+ocl: formular oclumancia:$arg:aeltas$      
+
+di: formular disipar magia:$arg:x$ $*$
+sor: formular sordera:$arg:x$              
+
+nvv: navegar detener                       
+
+df: formular defenestrar:$arg:x$
+
+son: sonreir mal $*$                       
+
+mi: formular miedo:$arg:x$                 
+det: formular detectar magia:$*$
+
+sob: formular sobriedad:$arg:aeltas$       
+mann: formular mano espectral              
+deso: desollar cuerpo
+sim: formular simulacro                    
+
+man: formular manos ardientes:$arg:x$      
+def: formular debilidad frio:$arg:x$
+sil: formular silueta imprecisa:aeltas    
+ luz: formular luz:tea                     
+ dd: formular debilidad:$arg:x$
+sg: seguir $arg:tgt$                       
+lm: formular leer magia:aeltas             
+db: poner $*$ en mochila
+sa: formular sangre a acido:$arg:x$        
+len: formular lentitud:$arg:x$             
+d: decir %^MAGENTA%^BOLD%^$*$%^RESET%^
+rs: formular relampago sombra:$arg:x$      
+le: formular lepra:$arg:x$                 
+ct: formular contrahechizo:$arg:x$
+rr: formular resistir %1:aeltas            
+irr: formular irritacion:$arg:x$           
+cg: coger todo de cuerpos
+rp: formular repudiar:$arg:x$              
+int: formular intoxicar:$arg:x$            
+cd: coger $*$ de disco
+rev: reverencia mal $*$                    
+ins: formular insensibilidad:$arg:x$       
+cb: coger $*$ de mochila
+res: formular resfriar:x                   
+ind: formular indetectable:aeltas          
+caida: formular caida de pluma:aeltas
+repa: repasar encargos                     
+ilu: formular ilustracion arcana:aeltas    
+bq: bloqueos $arg:aeltas$
+rep: formular repulsion:$arg:oeste$        
+gr: formular granizo:$arg:x$               
+big: formular agrandar:aeltas
+red: formular reducir:$arg:x$              
+gi: formular golpe ilusorio:$arg:x$        
+bf: formular bola de fuego:$arg:x$
+r: formular golpe de rayo:$arg:x$          
+fue: formular fuerza:$arg:aeltas$          
+ba: formular bola de agua:$arg:x$
+prov: formular provocar:$arg:x$                 
+ami: formular amistad:aeltas
+pro: formular proteccion $1$:aeltas             
+aa: formular defenestrar:$arg:x$
+pre: formular precognicion:$arg:aeltas$         
+a: formular desintegrar:$arg:x$
+pr: formular presa sacudidora:$arg:x$      
+
+wi: blandir $*$    
+sca: sc -a          
+or: orientar $*$     
+mas: maestria $*$    
+ext: extraer flecha  
+cin: babublu
+unwi: envainar $*$  
+sc: puntos -xp       
+op: abrir $*$        i
+ma: maestria $*$     
+est: estatus $*$     
+cc: chat !
+tr: trivial $*$      
+sae: salvar          
+nv: navegar          
+l: ojear             
+eq: equip            
+caza: nick tgt $*$
+
+tp: neruandi x       
+
+quit: salir          
+mx: mirar x          
+
+k: matar $arg:x$     
+en: enterrar $*$     
+
+b: buscar $*$
+
+tar: nick x $*$      
+qtar: qnick x $*$    
+mto: meteorologia    
+iib: interbando !    
+ee: estado todos     
+atar: anick x $*$
+ta: trepar arbol     
+qs: coger todo       
+mtar: mnicl
+
+k x $*$    
+ii: mirarme          
+
+cv: conversar $*$
+ap: abrir $*$
+stop: peleas parar   
+q: estado $arg:x$    
+mm: mirar mochila    
+gps: maeglin         
+cr: cerrar $*$       
+al: aplicar alhova
+scc: sc -v           
+pp: peleas parar     
+mbb: mirar bolsita   
+fi: finger $arg:me$  
+con: considerar x    
+aaa: levantarse
+
+********************************************************************************/
+
+
+/********************************************************************************
+* PARA BORRAR - unalias 
+********************************************************************************/
+
+
+#CLASS {RL_AELTAS} {close};
+

@@ -31,6 +31,41 @@
 
 #NOP TODO: autofollow of targets with F1 magic key;
 #NOP TODO: show exits in powerbar;
+#NOP TODO: show seguir/seguido in powerbar;
+
+/*** Saltar **/
+#ALIAS     {Sln}  {saltar norte }  {5};
+#ALIAS     {Sle}  {saltar este }  {5};
+#ALIAS     {Slo}  {saltar oeste}  {5};
+#ALIAS     {Sls}  {saltar sur}  {5};
+#ALIAS     {Slne} {saltar noreste }  {5};
+#ALIAS     {Slno} {saltar noroeste }  {5};
+#ALIAS     {Slse} {saltar sudeste}  {5};
+#ALIAS     {Slso} {saltar sudoeste}  {5};
+#ALIAS     {Slab} {saltar base }  {5};
+/*** Nadar **/
+#ALIAS     {Nn} {nadar norte     }  {5};
+#ALIAS     {Ne} { nadar este   }  {5};
+#ALIAS     {No} { nadar oeste   }  {5};
+#ALIAS     {Ns} { nadar sur   }  {5};
+#ALIAS     {Nne} {nadar noreste    }  {5};
+#ALIAS     {Nno} {nadar noroeste    }  {5};
+#ALIAS     {Nse} {nadar sudeste    }  {5};
+#ALIAS     {Nso} {nadar sudoeste    }  {5};
+#ALIAS     {Nab} {nadar abajo    }  {5};
+#ALIAS     {Nar} {nadar arriba    }  {5};
+/***  Galopar **/
+#ALIAS     {Gg} {decir so}  {5};
+#ALIAS     {Gn} {galopar norte }  {5};
+#ALIAS     {Ge} {galopar este }  {5};
+#ALIAS     {Go} {galopar oeste }  {5};
+#ALIAS     {Gs} {galopar sur }  {5};
+#ALIAS     {Gse} {galopar sudeste }  {5};
+#ALIAS     {Gso} {galopar sudoeste }  {5};
+#ALIAS     {Gne} {galopar noreste }  {5};
+#ALIAS     {Gno} {galopar noroeste } {5};
+#ALIAS     {Gar} {galopar arriba } {5};
+#ALIAS     {Gab} {galopar abajo  } {5};
 
 /**********************************************************************************************************************
  * Testing                                                                                                            *

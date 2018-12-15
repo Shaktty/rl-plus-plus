@@ -123,6 +123,7 @@
 #HIGHLIGHT {Hiena}  {orange}  {5};
 #HIGHLIGHT {Jabali}  {green}  {5};
 #HIGHLIGHT {Mono}  {<caf>}  {5};
+#SUBSTITUTE {Buceas en dirección %1.}  {<acf>Buceas en dirección <FCA> %1 } {5};
 
 
 /**********************************************************************************************************************

@@ -21,6 +21,7 @@
 #READ {src/modules/shape.tin};
 #READ {src/modules/target.tin};
 #READ {src/modules/combat.tin};
+
 #READ {src/classes/caster.tin};
 #READ {src/classes/hunter.tin};
 #READ {src/classes/priest.tin};
@@ -28,12 +29,14 @@
 #READ {src/classes/wizard.tin};
 #READ {src/classes/barbarian.tin};
 #READ {src/classes/fighter.tin};
-#READ {src/classes/gragbadur.tin};
-#READ {src/classes/marksman.tin};
-#READ {src/classes/ranger.tin};
-#READ {src/classes/wizwar.tin};
-#READ {src/classes/thief.tin};
-#READ {src/classes/druid.tin};
-#READ {data/armory.tin};
+
+#NOP #READ {src/classes/gragbadur.tin};
+#NOP #READ {src/classes/marksman.tin};
+#NOP #READ {src/classes/ranger.tin};
+#NOP #READ {src/classes/wizwar.tin};
+#NOP #READ {src/classes/thief.tin};
+#NOP #READ {src/classes/druid.tin};
+
+#NOP #READ {data/armory.tin};
 
 #CLASS {RL_BOOTLOADER} {close};

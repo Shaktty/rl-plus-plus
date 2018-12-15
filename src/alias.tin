@@ -33,7 +33,8 @@
 };
 
 #ALIAS {/conectar} {
-    #SESSION rl rlmud.org 23;
+    #SESSION rl reinosdeleyenda.es 23;
+    #NOP #SESSION rl rlmud.org 23;
 };
 
 #ALIAS {/limpiar} {

@@ -8,11 +8,10 @@
 #EVENT {PROGRAM START} {
     /limpiar;
     /motd;
-    #SPLIT;
     #SHOWME {<G03><138>@center{Bienvenido a RL++ - Pulsa F1 para conectarte}<099>} {1};
     #MACRO {\eOP} {
         #UNMACRO {\eOP};
-        #SESSION rl rlmud.org 5001;
+        #SESSION rl reinosdeleyenda.es 23;
       ##NOP AUTOLOADER DE PJ en src/custom  #EVENT
     };
 };
@@ -24,8 +23,6 @@
             #SHOWME {<G03><138>@center{Conectado a Reinos de Leyenda MUD}<099>} {1};
             #ACTION {Los Dioses te dan la bienvenida a sus Reinos de Leyenda} {
                 #SHOWME {<G03><138>@center{Usa el comando "puntos" para incializar la barra de estado}<099>} {1};
-                /ficha;
-                /log on;
                 #CLASS {RL_CONNECTION_IMPL} {kill};
             };
             #CLASS {RL_CONNECTION_IMPL} {close};
@@ -39,7 +36,7 @@
             #SHOWME {<G03><138>@center{Pulsa F1 para conectarte de nuevo}<099>} {1};
             #MACRO {\eOP} {
                 #UNMACRO {\eOP};
-                #SESSION rl rlmud.org 5001;
+                #SESSION rl reinosdeleyenda.es 23;
             };
         };
         #CASE {"rl"} {

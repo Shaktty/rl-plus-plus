@@ -1,8 +1,6 @@
 #CLASS {RL_MAIN} {kill};
 #CLASS {RL_MAIN} {open};
-
 #VAR {_development} {1};
-
 #READ {src/bootloader.tin};
 
 #CLASS {RL_MAIN} {close};
